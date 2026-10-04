@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUXWORLD+ Read & RSS Syndication</title>
+    <title>LUXWORLD+ Read</title>
     
-    <!-- Tailwind CSS for modern responsive layout -->
+    <!-- 
+      PREMIUM BASE64 ENCODED FAVICON (R in a Circle with Flowers)
+    -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMjgiIGZpbGw9IiMwZjc2NmUiIC8+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI3ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjIsMiIgLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMiwgMTEpIj48Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMyIgZmlsbD0iI2Y1OWUwYiIvPjxjaXJjbGUgY3g9IjAiIGN5PSUtNC41IiByPSIyIiBmaWxsPSIjZmZmZmZmIi8+PGNpcmNsZSBjeD0iNC41IiBjeT0iIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz+PGNpcmNsZSBjeD0iMCIgY3k9IjQuNSIgcj0iMiIgZmlsbD0iI2ZmZmZmZiIv+PGNpcmNsZSBjeD0iLTQuNSIgY3k9IjAiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48L2g+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgsIDQ0KSI+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjMiIGZpbGw9IiNmNTllMGIiLz48Y2lyY2xlIGN4PSIwIiBjeT0iLTQuNSIgcj0iMiIgZmlsbD0iI2ZmZmZmZiIv+PGNpcmNsZSBjeD0iNC41IiBjeT0iIHI9IjIiIGZpbGw9IifmZmZmZmYiLz+PGNpcmNsZSBjeD0iMCIgY3k9IjQuNSIgcj0iMiIgZmlsb=I2ZmZmZmZiIv+PGNpcmNsZSBjeD0iLTQuNSIgY3k9IjAiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48L2g+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDYsIDQ0KSI+PGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjMiIGZpbGw9IiNmNTllMGIiLz48Y2lyY2xlIGN4PSIwIiBjeT0iLTQuNSIgcj0iMiIgZmlsb=I2ZmZmZmZiIv+PGNpcmNsZSBjeD0iNC41IiBjeT0iIHI9IjIiIGZpbGw9IifmZmZmZmYiLz+PGNpcmNsZSBjeD0iMCIgY3k9IjQuNSIgcj0iMiIgZmlsb=I2ZmZmZmZiIv+PGNpcmNsZSBjeD0iLTQuNSIgY3k9IjAiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48L2g+PHBhdGggZD0iTSAxMiAzMiBDIDEyIDE4LCAxOCAxMiwgMzIgMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJkZDRiZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNIDUyIDMyIEMgNTIgMTgsIDQ2IDEyLCAzMiAxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMmRkNGJmIiBzdHJva2Utd2lkdGg9IjEuNSIvPjx0ZXh0IHg9IjMyIiB5PSI0MSIgZm9udC1mYW1pbHk9IlBsYWlmaXIgRGlzcGxheSwgc2VyaWYiIGZvbnQtc2l6ZT0iMjYiIGZvbnQtd2VpZ2h0PSI8MDAiIGZpbGw9IiNmZmZmZmYiLHRleHQtYW5jaG9yPSJtaWRkbGUiPlI8L3RleHQ+PC9zdmc+">
+
+    <!-- Tailwind CSS for modern structure -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Google Fonts -->
+    <!-- JSZip for Admin PDF Bulk Archive Zip Exporter -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- Premium Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
     <style>
@@ -21,14 +28,15 @@
             background-attachment: fixed;
         }
 
-        /* Customize Google Doc imported styles for readability */
+        /* Customize Google Doc imported styles to look highly professional & readable for users */
         .gdoc-content {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: #0f172a;
             line-height: 1.9;
-            font-size: 24px;
+            font-size: 24px; /* 11px + 13px baseline sizing */
         }
 
+        /* Ensure default nested tags conform to the 24px baseline size */
         .gdoc-content p, .gdoc-content span, .gdoc-content li, .gdoc-content td, .gdoc-content th {
             font-size: 24px;
         }
@@ -44,6 +52,7 @@
             color: #115e59;
         }
 
+        /* Enforce bold and underline styling from the Google Doc */
         .gdoc-content strong, .gdoc-content b, .gdoc-content [style*="font-weight: bold"], .gdoc-content [style*="font-weight:bold"] {
             font-weight: 800 !important;
             color: #000000 !important;
@@ -62,9 +71,9 @@
             line-height: 1.3;
             letter-spacing: -0.02em;
         }
-        .gdoc-content h1 { font-size: 38px; }
-        .gdoc-content h2 { font-size: 32px; }
-        .gdoc-content h3 { font-size: 28px; }
+        .gdoc-content h1 { font-size: 38px; } /* 25px + 13px scale */
+        .gdoc-content h2 { font-size: 32px; } /* 19px + 13px scale */
+        .gdoc-content h3 { font-size: 28px; } /* 15px + 13px scale */
         
         .gdoc-content p {
             margin-bottom: 1.6em;
@@ -79,6 +88,7 @@
             margin-bottom: 0.6rem;
         }
 
+        /* Image treatment to make them gorgeous with high-reliability fallback rendering */
         .gdoc-content img {
             max-width: 100%;
             height: auto;
@@ -94,6 +104,7 @@
             transform: scale(1.01);
         }
 
+        /* Custom image placeholder if image fails to load */
         .img-fallback-container {
             display: flex;
             flex-direction: column;
@@ -123,6 +134,7 @@
             font-weight: 700;
         }
         
+        /* Glassmorphism Panel styles */
         .glass-panel {
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(16px);
@@ -130,6 +142,7 @@
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
+        /* Custom Scrollbar styling */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
@@ -145,6 +158,7 @@
             background: rgba(60, 192, 189, 0.6);
         }
 
+        /* Telemetry privacy options UI */
         .privacy-opt {
             border: 1px solid #334155;
             background: #0f172a;
@@ -160,48 +174,33 @@
             border-color: #10b981;
             background: rgba(16, 185, 129, 0.1);
         }
-
-        .rss-code-box {
-            font-family: 'Fira Code', monospace;
-            background-color: #020617;
-            color: #38bdf8;
-            border: 1px solid #1e293b;
-        }
     </style>
 </head>
 <body class="min-h-screen p-4 md:p-8 flex flex-col items-center">
 
     <div class="max-w-7xl w-full flex-grow flex flex-col gap-6">
         
-        <!-- Utility Navbar -->
+        <!-- Utility Navbar (Minimal, Embedded-Friendly, No Logos) -->
         <header class="flex justify-between items-center w-full z-10 py-2">
-            <div id="navigation-left" class="flex items-center gap-3">
+            <div id="navigation-left" class="flex items-center gap-4">
+                <!-- LUXWORLD+ Nav Logo -->
                 <a href="https://luxworldplus.com" target="_blank" class="px-4 py-2 bg-white/95 hover:bg-white text-slate-800 font-bold rounded-xl shadow-lg transition hover:scale-105 active:scale-95 flex items-center gap-2.5 border border-slate-100 text-sm" style="text-decoration: none;">
+                    <img src="data:image/png;base64,YOUR_BASE64_IMAGE_HERE" alt="" class="h-10 sm:h-12 max-h-12 w-auto object-contain hidden" onload="if(!this.src.includes('YOUR_BASE64_IMAGE_HERE')) this.classList.remove('hidden');" onerror="this.style.display='none';">
                     <span class="text-teal-800 tracking-wide font-extrabold text-sm uppercase">LUXWORLD+</span>
                     <span class="text-slate-400 text-xs font-normal border-l border-slate-200 pl-2.5 hidden sm:inline">Back to Main</span>
                 </a>
                 
-                <button id="btn-back-to-grid" onclick="navigateToGrid()" class="hidden px-4 py-2 bg-white/95 hover:bg-white text-slate-800 font-bold rounded-xl shadow-lg transition hover:scale-105 active:scale-95 flex items-center gap-2 border border-slate-100 text-sm">
+                <!-- Dynamically populated Back button when reading -->
+                <button id="btn-back-to-grid" onclick="navigateToGrid()" class="hidden px-5 py-2.5 bg-white/95 hover:bg-white text-slate-800 font-bold rounded-xl shadow-lg transition hover:scale-105 active:scale-95 flex items-center gap-2 border border-slate-100 text-sm">
                     <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Articles
                 </button>
             </div>
-
             <div class="flex items-center gap-2">
-                <!-- RSS Trigger Button -->
-                <button onclick="openRSSView()" class="px-3.5 py-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl shadow-lg transition hover:scale-105 active:scale-95 flex items-center gap-1.5 text-xs" title="Export RSS 2.0 Feed for Syndication">
-                    <i data-lucide="rss" class="w-4 h-4"></i>
-                    <span class="hidden sm:inline">RSS Feed</span>
-                </button>
-
-                <!-- Admin & Settings Button -->
                 <button onclick="toggleManagerPanel()" class="px-4 py-2 bg-white/90 hover:bg-white text-teal-800 font-semibold rounded-xl shadow-lg transition hover:scale-105 active:scale-95 flex items-center gap-2 border border-slate-100 text-xs" title="Configure Document URLs & Privacy">
-                    <i data-lucide="database" class="w-4 h-4"></i>
-                    <span class="hidden md:inline">System Admin and Settings</span>
+                    <i data-lucide="database" class="w-4 h-4"></i> System Admin
                 </button>
-
-                <!-- Refresh Button -->
                 <button onclick="window.location.reload()" class="p-2.5 bg-white/90 hover:bg-white text-slate-700 rounded-xl shadow-lg transition hover:scale-105 active:scale-95 border border-slate-100" title="Refresh Feed">
-                    <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                    <i data-lucide="refresh-cw" class="w-4 h-4 animate-once"></i>
                 </button>
             </div>
         </header>
@@ -215,16 +214,10 @@
                     <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
                         <i data-lucide="search" class="w-4.5 h-4.5"></i>
                     </span>
-                    <input type="text" id="search-input" oninput="handleSearch()" placeholder="Find article..." class="w-full bg-slate-50 pl-11 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 text-slate-850 shadow-inner font-medium">
+                    <input type="text" id="search-input" oninput="handleSearch()" placeholder="Find article..." class="w-full bg-slate-50 pl-11 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-slate-850 shadow-inner font-medium">
                 </div>
-                
-                <div class="flex items-center gap-3">
-                    <button onclick="downloadRSSFeed()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition flex items-center gap-1.5" title="Download XML for Syndication Networks">
-                        <i data-lucide="download" class="w-3.5 h-3.5 text-amber-600"></i> Get RSS XML
-                    </button>
-                    <div id="article-count-badge" class="px-3.5 py-1.5 bg-teal-50 text-teal-800 border border-teal-100 text-xs font-bold rounded-lg whitespace-nowrap">
-                        0 Articles
-                    </div>
+                <div id="article-count-badge" class="px-3.5 py-1.5 bg-teal-50 text-teal-800 border border-teal-100 text-xs font-bold rounded-lg whitespace-nowrap">
+                    0 Articles
                 </div>
             </div>
 
@@ -297,7 +290,7 @@
                     <!-- Loaded document gets injected here -->
                 </div>
 
-                <!-- Comments Module Integration -->
+                <!-- PREMIUM COMMENTS MODULE INTEGRATION -->
                 <section class="mt-16 pt-12 border-t border-slate-200">
                     <div class="max-w-4xl mx-auto space-y-10">
                         <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
@@ -329,15 +322,17 @@
                             </div>
                         </div>
 
-                        <!-- Comment Form Panel -->
+                        <!-- Elegant Add Comment Form Panel -->
                         <div class="bg-slate-50/50 border border-slate-100 p-6 md:p-8 rounded-2xl space-y-6">
                             <div>
                                 <h4 class="text-base font-bold text-slate-900 leading-snug">Share your thoughts</h4>
                                 <p class="text-xs text-slate-500 mt-1">Your email will remain completely secure and private.</p>
                             </div>
 
+                            <!-- Targeted Invisible Submission Iframe (Enables redirect-free submissions) -->
                             <iframe name="comment_submit_target" id="comment_submit_target" class="hidden"></iframe>
 
+                            <!-- Standardized Prefill Auto-Submit Google Form -->
                             <form 
                                 id="comment-submission-form" 
                                 action="https://docs.google.com/forms/d/e/1FAIpQLScEv7aXi7Bq-ywcq2qdR3c0_s9lLVsZ9avNSUE9PWjkXyYFBw/formResponse" 
@@ -346,6 +341,7 @@
                                 class="space-y-4"
                                 onsubmit="registerSubmission()"
                             >
+                                <!-- Auto-Injected Clean/Stripped Article URL -->
                                 <input type="hidden" name="entry.1856052371" id="form-article-url-field">
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -379,63 +375,13 @@
             </article>
         </main>
 
-        <!-- Live RSS Syndication View Panel -->
-        <main id="rss-view" class="hidden glass-panel rounded-2xl p-6 md:p-10 shadow-2xl flex flex-col gap-6">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-200 pb-6 gap-4">
-                <div class="space-y-1">
-                    <div class="flex items-center gap-2 text-amber-600 font-extrabold text-xs uppercase tracking-widest">
-                        <i data-lucide="rss" class="w-4 h-4"></i> Boarding Area & Syndication Hub
-                    </div>
-                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Live RSS 2.0 Feed Payload</h2>
-                    <p class="text-xs text-slate-500">This XML stream is auto-generated from your live synced Google Docs & Slides catalog.</p>
-                </div>
-                
-                <div class="flex flex-wrap items-center gap-2">
-                    <button onclick="copyRSSFeed()" class="px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition flex items-center gap-2 shadow">
-                        <i data-lucide="copy" class="w-4 h-4 text-amber-400"></i> Copy RSS XML
-                    </button>
-                    <button onclick="downloadRSSFeed()" class="px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold rounded-xl transition flex items-center gap-2 shadow">
-                        <i data-lucide="download" class="w-4 h-4"></i> Export feed.xml
-                    </button>
-                    <button onclick="navigateToGrid()" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center gap-2">
-                        Close RSS
-                    </button>
-                </div>
-            </div>
-
-            <!-- Feed Specs Summary Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-                    <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">Feed Standard</span>
-                    <p class="text-sm font-bold text-slate-800">RSS 2.0 XML + Dublin Core</p>
-                </div>
-                <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-                    <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">Indexed Articles</span>
-                    <p id="rss-stat-count" class="text-sm font-bold text-teal-700">0 Items Enriched</p>
-                </div>
-                <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-                    <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">Network Compatibility</span>
-                    <p class="text-sm font-bold text-amber-600">Boarding Area / Feedly Ready</p>
-                </div>
-            </div>
-
-            <!-- Code Display Area for Raw XML -->
-            <div class="space-y-2">
-                <div class="flex justify-between items-center text-xs text-slate-500 font-mono">
-                    <span>rss-feed.xml (Live Stream output)</span>
-                    <span id="rss-copy-toast" class="text-emerald-600 font-bold hidden">Copied to clipboard!</span>
-                </div>
-                <pre id="rss-xml-container" class="rss-code-box p-5 rounded-2xl text-xs overflow-x-auto max-h-[450px] leading-relaxed shadow-inner select-all"></pre>
-            </div>
-        </main>
-
     </div>
 
     <!-- Slide-over Data Sync Panel -->
     <div id="manager-panel" class="fixed inset-y-0 right-0 max-w-md w-full bg-slate-900 text-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col border-l border-slate-800">
         <div class="p-6 border-b border-slate-800 flex justify-between items-center">
             <h3 class="text-sm font-bold uppercase tracking-widest text-teal-400 flex items-center gap-2">
-                <i data-lucide="sliders" class="w-4 h-4"></i> System Admin & Settings
+                <i data-lucide="sliders" class="w-4 h-4"></i> Data & Privacy Config
             </h3>
             <button onclick="toggleManagerPanel()" class="p-1 hover:bg-slate-800 rounded-lg text-slate-400 hover:text-white transition">
                 <i data-lucide="x" class="w-5 h-5"></i>
@@ -449,31 +395,44 @@
                 <input type="text" id="config-index-id" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs font-mono text-teal-300 focus:outline-none focus:border-teal-500" placeholder="Paste your Google Doc URL or ID">
             </div>
 
-            <!-- Boarding Area / RSS Syndication Hub -->
-            <div class="p-4 bg-slate-950 border border-amber-500/30 rounded-xl space-y-3">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-xs font-bold text-amber-400 flex items-center gap-1.5 uppercase">
-                        <i data-lucide="rss" class="w-3.5 h-3.5"></i> 📡 Boarding Area RSS Feed Engine
-                    </h4>
-                    <span class="text-[9px] bg-amber-500/20 text-amber-300 font-extrabold px-2 py-0.5 rounded uppercase">Active</span>
+            <!-- ADMIN BACKUP & BULK PDF EXPORT -->
+            <div class="space-y-3 pt-2 border-t border-slate-800">
+                <div class="flex justify-between items-center">
+                    <label class="block text-xs font-bold text-teal-300 uppercase flex items-center gap-1.5">
+                        <i data-lucide="archive" class="w-3.5 h-3.5 text-teal-400"></i> Admin Archive & Backup
+                    </label>
+                    <span class="text-[9px] bg-teal-500/20 text-teal-300 px-2 py-0.5 rounded font-bold uppercase">Admin Only</span>
                 </div>
-                <p class="text-[11px] text-slate-400 leading-relaxed">
-                    Auto-generates a clean RSS 2.0 XML feed from your master Google Doc/Slides registry. Perfect for syndication on travel networks like Boarding Area.
+                <p class="text-[11px] text-slate-400 leading-snug">
+                    Download all articles from the catalog in original PDF format bundled into a single ZIP backup file.
                 </p>
-                <div class="flex gap-2 pt-1">
-                    <button onclick="downloadRSSFeed()" class="flex-1 py-2 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded-lg transition flex items-center justify-center gap-1.5">
-                        <i data-lucide="download" class="w-3 h-3"></i> Download .xml
-                    </button>
-                    <button onclick="copyRSSFeed()" class="flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs font-bold rounded-lg transition flex items-center justify-center gap-1.5 border border-slate-700">
-                        <i data-lucide="copy" class="w-3 h-3"></i> Copy XML
-                    </button>
+                <button id="admin-backup-btn" onclick="exportAllArticlesZip()" class="w-full py-2.5 bg-teal-700 hover:bg-teal-600 text-white text-xs font-bold rounded-xl transition shadow-md border border-teal-500/30 flex items-center justify-center gap-2">
+                    <i data-lucide="download-cloud" class="w-4 h-4"></i> Export All Articles as PDF Archive (.zip)
+                </button>
+                <div class="flex items-center justify-between text-xs text-slate-300 px-1 py-0.5">
+                    <label for="rss-include-b64" class="text-[11px] font-semibold text-slate-400 flex items-center gap-1.5 cursor-pointer">
+                        <input type="checkbox" id="rss-include-b64" class="rounded border-slate-700 bg-slate-950 text-teal-500 focus:ring-0">
+                        Include Base64 Image Data in RSS
+                    </label>
+                </div>
+                <button id="admin-rss-btn" onclick="copyAdminRssFeed()" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-teal-300 font-bold text-xs rounded-xl transition shadow-md border border-slate-700 flex items-center justify-center gap-2">
+                    <i data-lucide="rss" class="w-4 h-4 text-orange-400"></i> Copy Admin RSS Feed (XML)
+                </button>
+                <div id="admin-backup-progress-container" class="hidden space-y-2 pt-1">
+                    <div class="flex justify-between text-[10px] text-slate-300 font-semibold">
+                        <span id="admin-backup-status-text">Preparing backup engine...</span>
+                        <span id="admin-backup-percent">0%</span>
+                    </div>
+                    <div class="w-full bg-slate-950 rounded-full h-2 border border-slate-800 overflow-hidden">
+                        <div id="admin-backup-bar" class="bg-teal-500 h-full w-0 transition-all duration-300"></div>
+                    </div>
                 </div>
             </div>
 
             <!-- 4-Level Privacy & Diagnostics Control -->
             <div class="space-y-3 pt-2 border-t border-slate-800">
                 <div class="flex justify-between items-center">
-                    <label class="block text-xs font-bold text-slate-400 uppercase">Privacy & Diagnostics</label>
+                    <label class="block text-xs font-bold text-slate-400 uppercase">📡 Privacy & Diagnostic Level</label>
                     <span id="telemetryStatus" class="text-[10px] text-emerald-400 font-bold">Online 🟢</span>
                 </div>
 
@@ -517,10 +476,20 @@
             <!-- Import/Export Config Area -->
             <div class="space-y-2 pt-2 border-t border-slate-800">
                 <div class="flex justify-between items-center">
-                    <label class="block text-xs font-bold text-slate-400 uppercase font-mono">Registry Configuration JSON</label>
+                    <label class="block text-xs font-bold text-slate-400 uppercase font-mono">Registry Configuration JSON (Active Session)</label>
                     <button onclick="copyRegistryJSON()" class="text-[10px] text-teal-400 font-semibold hover:underline">Copy JSON</button>
                 </div>
-                <textarea id="config-registry-json" rows="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-[10px] font-mono text-emerald-400 focus:outline-none focus:border-emerald-500" placeholder="Registry Data JSON String"></textarea>
+                <textarea id="config-registry-json" rows="6" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-[10px] font-mono text-emerald-400 focus:outline-none focus:border-emerald-500" placeholder="Registry Data JSON String"></textarea>
+            </div>
+
+            <div class="p-4 bg-slate-950 border border-slate-800 rounded-xl text-xs space-y-2 text-slate-400">
+                <h4 class="font-bold text-white flex items-center gap-1.5 text-xs">
+                    <i data-lucide="info" class="w-4 h-4 text-teal-400"></i> Publishing Rules:
+                </h4>
+                <ul class="list-disc pl-4 space-y-1 text-[11px]">
+                    <li>Ensure your Google Doc is shared to "Anyone with the link can view".</li>
+                    <li>Add hyperlinks to other child documents inside your Master Index Google Doc.</li>
+                </ul>
             </div>
         </div>
 
@@ -535,7 +504,7 @@
     </div>
 
     <!-- FLOATING CONSENT BANNER -->
-    <div id="consent-banner" class="fixed bottom-6 right-6 max-w-sm bg-slate-900 border-2 border-teal-500/40 text-white p-5 rounded-2xl shadow-2xl z-50 hidden">
+    <div id="consent-banner" class="fixed bottom-6 right-6 max-w-sm bg-slate-900 border-2 border-teal-500/40 text-white p-5 rounded-2xl shadow-2xl z-50 hidden animate-bounce-once">
         <div class="flex items-center gap-2 text-teal-300 font-bold text-sm mb-1">
             <i data-lucide="shield-check" class="w-4 h-4"></i> Privacy & Telemetry Preference
         </div>
@@ -552,20 +521,26 @@
         </div>
     </div>
 
+    <!-- Invisible Iframe for Telemetry Auto-Submission -->
     <iframe id="telemetrySubmissionFrame" name="telemetrySubmissionFrame" class="hidden" style="display:none; width:0; height:0;"></iframe>
+
+    <!-- Backdrop Blur overlay -->
     <div id="panel-overlay" onclick="toggleManagerPanel()" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 hidden transition-opacity duration-300"></div>
 
     <script>
         const LOCAL_STORAGE_KEY_ID = "gdoc_reader_index_id";
         const DEFAULT_INDEX_ID = "1_uO1Uwals_ooYWogV9SHFtH5DuIC5mioXddj10QWGM8";
 
+        // Google Sheets Database parameters for comments
         const COMMENTS_SHEET_ID = "1pujYuucAvqJB5ZAz9vQ5lv5cpKCHjOZk5WURWXbCKhk";
         const COMMENTS_GID = "1009570863";
 
+        // Active Comments state
         let activeArticleComments = [];
         let visibleCommentsCount = 5;
         let isCommentSubmitting = false;
 
+        // Telemetry & Network Tracker state
         let privacyLevel = localStorage.getItem("lwp_read_privacy_level") !== null 
             ? parseInt(localStorage.getItem("lwp_read_privacy_level")) 
             : null;
@@ -590,10 +565,11 @@
         }
 
         let PRIMARY_INDEX_DOC_ID = extractDocId(localStorage.getItem(LOCAL_STORAGE_KEY_ID) || DEFAULT_INDEX_ID);
-        let articleRegistry = {}; 
+        let articleRegistry = {}; // Starts clean in memory on every reload!
         let visibleArticlesCount = 9;
         let searchQuery = "";
 
+        // Standardized, high quality SVGs matching the brand color palette
         const DEFAULT_THUMBNAILS = [
             'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'><rect width=\'100%\' height=\'100%\' fill=\'%2314b8a6\' opacity=\'0.1\'/><rect x=\'40\' y=\'40\' width=\'320\' height=\'170\' rx=\'12\' fill=\'%23ffffff\' stroke=\'%232dd4bf\' stroke-width=\'2\'/><circle cx=\'120\' cy=\'125\' r=\'45\' fill=\'%232dd4bf\' opacity=\'0.3\'/><line x1=\'200\' y1=\'105\' x2=\'320\' y2=\'105\' stroke=\'%2314b8a6\' stroke-width=\'4\' stroke-linecap=\'round\'/></svg>',
             'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\' viewBox=\'0 0 400 250\'><rect width=\'100%\' height=\'100%\' fill=\'%2314b8a6\' opacity=\'0.15\'/><path d=\'M150 70 L250 70 L280 180 L120 180 Z\' fill=\'%23ffffff\' stroke=\'%230f766e\' stroke-width=\'3\'/></svg>'
@@ -623,7 +599,7 @@
                     triggerDataSyncPipeline();
                 }
             } catch (err) {
-                console.warn("Geo IP fetch omitted:", err);
+                console.warn("Geo IP fetch omitted or limited:", err);
             }
         }
 
@@ -642,8 +618,9 @@
             if (privacyLevel === null) return;
 
             const statusEl = document.getElementById("telemetryStatus");
+
             if (statusEl) {
-                statusEl.textContent = privacyLevel === 0 ? "Opted-Out 🔴" : "Syncing... 🟡";
+                statusEl.textContent = privacyLevel === 0 ? "Opted-Out (Comments Allowed) 🔴" : "Syncing... 🟡";
                 statusEl.className = privacyLevel === 0 ? "text-[10px] text-rose-400 font-bold" : "text-[10px] text-amber-400 font-bold";
             }
 
@@ -659,6 +636,7 @@
                 nameAndEmailComments = `${formNameVal || 'Anon'} (${formEmailVal || 'no email'})`;
             }
 
+            // Always allow Name and Email in comments across ALL levels (3, 2, 1, and 0)
             let payloadCategoryComments = nameAndEmailComments;
             let payloadLinksGDoc = "nan";
             let payloadArticleName = "nan";
@@ -671,7 +649,7 @@
             let payloadISP = "nan";
             let payloadDevice = "nan";
 
-            const currentDomain = "read.luxworldplus.com";
+            const currentDomain = (window.location.hostname && window.location.hostname !== 'null') ? window.location.hostname : "read.luxworldplus.com";
             const referrerVal = document.referrer || "Direct Address Access";
             const searchBarText = searchQuery || "None";
             const deviceOS = getDeviceOS();
@@ -734,7 +712,7 @@
             if (iframeEl) iframeEl.src = silentSubmitUrl;
 
             if (statusEl) {
-                statusEl.textContent = privacyLevel === 0 ? "Opted-Out 🟢" : "Synced 🟢";
+                statusEl.textContent = privacyLevel === 0 ? "Opted-Out (Comments Allowed) 🟢" : "Synced 🟢";
                 statusEl.className = "text-[10px] text-emerald-400 font-bold";
             }
         }
@@ -754,10 +732,17 @@
             return text.toString().toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '').replace(/\-\-+/g, '-').replace(/^-+/, '').replace(/-+$/, '');
         }
 
+        // Clean query strings (e.g. ?q=search&) from active window URLs to construct beautiful prefill URLs
         function getCleanUrlForArticle(articleKey) {
-            return `https://read.luxworldplus.com/?article=${articleKey}`;
+            let cleanOrigin = "https://read.luxworldplus.com";
+            if (window.location.protocol.startsWith('http') && window.location.hostname && window.location.hostname !== 'null') {
+                cleanOrigin = window.location.origin + window.location.pathname;
+            }
+            const base = cleanOrigin.endsWith('/') ? cleanOrigin.slice(0, -1) : cleanOrigin;
+            return `${base}?article=${articleKey}`;
         }
 
+        // Compares article keys directly to avoid query param issues (e.g., '?q=september&article=mykey' will map to 'mykey')
         function extractArticleKeyFromUrl(urlStr) {
             if (!urlStr) return "";
             try {
@@ -769,6 +754,7 @@
             }
         }
 
+        // Extracts date and signature metadata directly from the presentation/document raw title string
         function extractMetadataFromTitle(title) {
             const dateRegex = /\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2},?\s+\d{4}(?:\s*,\s*\d{1,2}:\d{2}(?:\s|[\s\u2000-\u206F\u00A0\u202f])*[AP]M)?/i;
             const signatureRegex = /\b(?:by|author|written by|signed by|signed|signature)\s*:?\s+([a-zA-Z0-9\s._-]+)/i;
@@ -789,6 +775,7 @@
                 cleanedTitle = cleanedTitle.replace(sigMatch[0], '');
             }
 
+            // Cleanup residual separators, double dashes, double commas, and outer spacing
             cleanedTitle = cleanedTitle
                 .replace(/\s*-\s*-\s*/g, ' - ')
                 .replace(/,\s*,/g, ',')
@@ -802,103 +789,7 @@
             };
         }
 
-        /**
-         * Dynamic RSS 2.0 Generator
-         * Constructs standard XML feed for consumption by RSS readers, Feedly, Boarding Area, or WordPress importers.
-         */
-        function buildRSSXML() {
-            const siteUrl = "https://read.luxworldplus.com/";
-            const lastBuildDate = new Date().toUTCString();
-
-            let itemsXML = "";
-
-            Object.keys(articleRegistry).forEach(key => {
-                const article = articleRegistry[key];
-                const articleLink = getCleanUrlForArticle(key);
-                const title = (article.title || "Untitled Article").replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                const description = (article.description || "Live synced article from LUXWORLD+").replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                const author = (article.signature || "LUXWORLD+ Team").replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                
-                let pubDate = lastBuildDate;
-                if (article.date) {
-                    const parsed = new Date(article.date);
-                    if (!isNaN(parsed.getTime())) {
-                        pubDate = parsed.toUTCString();
-                    }
-                }
-
-                itemsXML += `
-    <item>
-      <title>${title}</title>
-      <link>${articleLink}</link>
-      <guid isPermaLink="true">${articleLink}</guid>
-      <pubDate>${pubDate}</pubDate>
-      <dc:creator>${author}</dc:creator>
-      <description>${description}</description>
-      <content:encoded><![CDATA[<p>${description}</p><p><a href="${articleLink}">Read full post on LUXWORLD+</a></p>]]></content:encoded>
-    </item>`;
-            });
-
-            const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" 
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>LUXWORLD+ Live Feed</title>
-    <link>${siteUrl}</link>
-    <atom:link href="${siteUrl}?feed=rss" rel="self" type="application/rss+xml" />
-    <description>Live synced flight, travel, and editorial stories from LUXWORLD+</description>
-    <language>en-us</language>
-    <lastBuildDate>${lastBuildDate}</lastBuildDate>
-    <generator>LUXWORLD+ Google Doc Reader Engine</generator>${itemsXML}
-  </channel>
-</rss>`;
-
-            return xmlString;
-        }
-
-        function copyRSSFeed() {
-            const xml = buildRSSXML();
-            const ta = document.createElement('textarea');
-            ta.value = xml;
-            document.body.appendChild(ta);
-            ta.select();
-            try {
-                document.execCommand('copy');
-                const toast = document.getElementById('rss-copy-toast');
-                if (toast) {
-                    toast.classList.remove('hidden');
-                    setTimeout(() => toast.classList.add('hidden'), 3000);
-                }
-            } catch (e) {
-                console.error("Copy RSS failed", e);
-            }
-            document.body.removeChild(ta);
-        }
-
-        function downloadRSSFeed() {
-            const xml = buildRSSXML();
-            const blob = new Blob([xml], { type: 'text/xml;charset=utf-8;' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'rss-feed.xml';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
-
-        function openRSSView() {
-            try {
-                const url = new URL(window.location.href);
-                url.searchParams.set('feed', 'rss');
-                window.history.pushState({}, '', url);
-            } catch (e) {}
-            route();
-        }
-
+        // Surgically update card elements in the DOM without rebuilding the entire grid layout on fetch callbacks
         function updateCardDOM(key, thumbnail, description, date, signature) {
             if (thumbnail) {
                 const imgEl = document.getElementById(`thumb-${key}`);
@@ -943,6 +834,205 @@
                 try { return await attempts[i](); } catch (e) { lastError = e.message; }
             }
             throw new Error(`Connection Blocked: ${lastError}`);
+        }
+
+        // Fetch PDF binary blob for a document or presentation
+        async function fetchDocumentPdfBlob(docId, isSlide = false) {
+            const pdfUrl = isSlide 
+                ? `https://docs.google.com/presentation/d/${docId}/export/pdf`
+                : `https://docs.google.com/document/d/${docId}/export?format=pdf`;
+
+            const attempts = [
+                async () => {
+                    const res = await fetch(pdfUrl);
+                    if (!res.ok) throw new Error();
+                    return await res.blob();
+                },
+                async () => {
+                    const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(pdfUrl)}`);
+                    if (!res.ok) throw new Error();
+                    return await res.blob();
+                },
+                async () => {
+                    const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(pdfUrl)}`);
+                    if (!res.ok) throw new Error();
+                    const data = await res.json();
+                    const base64Data = data.contents.split(',')[1] || data.contents;
+                    const byteChars = atob(base64Data);
+                    const byteNumbers = new Array(byteChars.length);
+                    for (let i = 0; i < byteChars.length; i++) {
+                        byteNumbers[i] = byteChars.charCodeAt(i);
+                    }
+                    const byteArray = new Uint8Array(byteNumbers);
+                    return new Blob([byteArray], { type: 'application/pdf' });
+                }
+            ];
+
+            for (let i = 0; i < attempts.length; i++) {
+                try {
+                    return await attempts[i]();
+                } catch (e) {}
+            }
+            throw new Error("Unable to retrieve PDF export blob");
+        }
+
+        // ADMIN FEATURE: Bulk Backup all catalog articles into a single ZIP file containing original PDF files
+        async function exportAllArticlesZip() {
+            if (typeof JSZip === 'undefined') {
+                alert("Archive compression library (JSZip) is still loading. Please try again in a few seconds.");
+                return;
+            }
+
+            const keys = Object.keys(articleRegistry);
+            if (keys.length === 0) {
+                alert("No articles found in current registry catalog to backup.");
+                return;
+            }
+
+            const backupBtn = document.getElementById('admin-backup-btn');
+            const progressContainer = document.getElementById('admin-backup-progress-container');
+            const statusText = document.getElementById('admin-backup-status-text');
+            const percentText = document.getElementById('admin-backup-percent');
+            const barEl = document.getElementById('admin-backup-bar');
+
+            backupBtn.disabled = true;
+            backupBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            progressContainer.classList.remove('hidden');
+
+            const zip = new JSZip();
+            let completedCount = 0;
+            const totalCount = keys.length;
+
+            for (let i = 0; i < keys.length; i++) {
+                const key = keys[i];
+                const item = articleRegistry[key];
+                const isSlide = item.type === "presentation";
+
+                const cleanTitle = slugify(item.title.replace(/\[.*?\]/g, '').trim()) || `article-${item.id}`;
+                const fileName = `${cleanTitle}.pdf`;
+
+                statusText.textContent = `Fetching (${i + 1}/${totalCount}): ${item.title.substring(0, 25)}...`;
+                
+                try {
+                    const pdfBlob = await fetchDocumentPdfBlob(item.id, isSlide);
+                    zip.file(fileName, pdfBlob);
+                } catch (err) {
+                    console.warn(`Could not export PDF for ${item.title}, creating text placeholder inside backup`, err);
+                    const fallbackTxt = `LUXWORLD+ Article Backup Failure\nArticle Title: ${item.title}\nGoogle Doc ID: ${item.id}\nOriginal Document URL: https://docs.google.com/document/d/${item.id}/edit\nReason: PDF export restricted or offline.`;
+                    zip.file(`${cleanTitle}_error_notice.txt`, fallbackTxt);
+                }
+
+                completedCount++;
+                const currentPercent = Math.round((completedCount / totalCount) * 100);
+                percentText.textContent = `${currentPercent}%`;
+                barEl.style.width = `${currentPercent}%`;
+            }
+
+            statusText.textContent = "Packing ZIP archive...";
+
+            try {
+                const zipContent = await zip.generateAsync({ type: "blob" });
+                const dateStr = new Date().toISOString().split('T')[0];
+                const downloadUrl = URL.createObjectURL(zipContent);
+
+                const link = document.createElement('a');
+                link.href = downloadUrl;
+                link.download = `luxworld_articles_pdf_backup_${dateStr}.zip`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(downloadUrl);
+
+                statusText.textContent = "Backup complete! ZIP downloaded.";
+            } catch (err) {
+                console.error("ZIP Generation Failed", err);
+                statusText.textContent = "Error generating ZIP package.";
+            } finally {
+                backupBtn.disabled = false;
+                backupBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        async function copyAdminRssFeed() {
+            const copyBtn = document.getElementById('admin-rss-btn');
+            const includeB64 = document.getElementById('rss-include-b64')?.checked || false;
+            const origText = copyBtn ? copyBtn.innerHTML : '';
+            if (copyBtn) {
+                copyBtn.innerHTML = `<i data-lucide="refresh-cw" class="w-4 h-4 animate-spin"></i> Generating RSS XML...`;
+                if (window.lucide) lucide.createIcons();
+            }
+
+            const itemsXml = [];
+            const keys = Object.keys(articleRegistry);
+
+            for (const key of keys) {
+                const item = articleRegistry[key];
+                const articleUrl = getCleanUrlForArticle(key);
+                
+                let imgTag = '';
+                if (includeB64 && item.thumbnail) {
+                    let imgB64 = '';
+                    if (item.thumbnail.startsWith('data:')) {
+                        imgB64 = item.thumbnail;
+                    } else {
+                        try {
+                            imgB64 = `data:image/svg+xml;base64,${btoa(item.thumbnail)}`;
+                        } catch(e) {
+                            imgB64 = item.thumbnail;
+                        }
+                    }
+                    if (imgB64) {
+                        imgTag = `\n      <image_b64><![CDATA[${imgB64}]]></image_b64>`;
+                    }
+                }
+
+                const titleEscaped = (item.title || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                const introEscaped = (item.description || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                const authorEscaped = (item.signature || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                const dateEscaped = (item.date || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+                itemsXml.push(`    <item>
+      <title>${titleEscaped}</title>
+      <link>${articleUrl}</link>
+      <guid>${articleUrl}</guid>
+      <dc:creator><![CDATA[${authorEscaped}]]></dc:creator>
+      <pubDate>${dateEscaped}</pubDate>
+      <description><![CDATA[${introEscaped}]]></description>${imgTag}
+    </item>`);
+            }
+
+            const channelLink = (window.location.protocol.startsWith('http') && window.location.hostname && window.location.hostname !== 'null')
+                ? (window.location.origin + window.location.pathname)
+                : 'https://read.luxworldplus.com/';
+
+            const rssXml = `<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>LUXWORLD+ Read Admin Feed</title>
+    <link>${channelLink}</link>
+    <description>LUXWORLD+ Dynamic Article Directory RSS Feed</description>
+${itemsXml.join('\n')}
+  </channel>
+</rss>`;
+
+            const ta = document.createElement('textarea');
+            ta.value = rssXml;
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+                document.execCommand('copy');
+                if (copyBtn) {
+                    copyBtn.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> RSS XML Copied to Clipboard!`;
+                    if (window.lucide) lucide.createIcons();
+                    setTimeout(() => {
+                        copyBtn.innerHTML = origText;
+                        if (window.lucide) lucide.createIcons();
+                    }, 2500);
+                }
+            } catch (e) {
+                alert('Failed to copy RSS feed to clipboard.');
+            }
+            document.body.removeChild(ta);
         }
 
         function parseArticlesFromHTML(htmlContent) {
@@ -1072,6 +1162,7 @@
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
+                        <!-- Card Metadata Header Area (Display Date and Signature) -->
                         <div id="badges-${key}" class="flex flex-wrap items-center gap-2 mb-2 text-[10px] font-bold text-teal-700 tracking-wider uppercase">
                             ${item.date ? `
                                 <span class="bg-teal-50 px-2 py-0.5 rounded-md flex items-center gap-1">
@@ -1262,7 +1353,7 @@
                 renderCommentsList();
 
             } catch (err) {
-                console.error("Comments connection blocked", err);
+                console.error("Comments connection blocked or empty rows", err);
                 loaderEl.classList.add('hidden');
                 emptyEl.classList.remove('hidden');
                 emptyEl.textContent = "Discussion feed currently unavailable.";
@@ -1290,7 +1381,7 @@
                 const avatarChar = comm.name.charAt(0).toUpperCase() || 'A';
                 
                 const commentCard = document.createElement('div');
-                commentCard.className = "p-5 bg-white border border-slate-100 rounded-2xl shadow-sm flex items-start gap-4";
+                commentCard.className = "p-5 bg-white border border-slate-100 rounded-2xl shadow-sm flex items-start gap-4 animate-fadeIn";
                 commentCard.innerHTML = `
                     <div class="w-10 h-10 rounded-full bg-teal-50 border border-teal-100 flex items-center justify-center font-bold text-teal-800 text-sm flex-shrink-0">
                         ${avatarChar}
@@ -1377,10 +1468,6 @@
             try {
                 const url = new URL(window.location.href); 
                 url.searchParams.set('article', key); 
-                url.searchParams.delete('feed');
-                if (url.pathname.toLowerCase().endsWith('/feed/') || url.pathname.toLowerCase().endsWith('/feed')) {
-                    url.pathname = url.pathname.replace(/\/feed\/?$/i, '');
-                }
                 window.history.pushState({}, '', url); 
             } catch (e) {
                 console.warn('History pushState restricted:', e);
@@ -1392,10 +1479,6 @@
             try {
                 const url = new URL(window.location.href); 
                 url.searchParams.delete('article'); 
-                url.searchParams.delete('feed');
-                if (url.pathname.toLowerCase().endsWith('/feed/') || url.pathname.toLowerCase().endsWith('/feed')) {
-                    url.pathname = url.pathname.replace(/\/feed\/?$/i, '');
-                }
                 window.history.pushState({}, '', url); 
             } catch (e) {
                 console.warn('History pushState restricted:', e);
@@ -1443,36 +1526,10 @@
         async function route() {
             const urlParams = new URLSearchParams(window.location.search);
             const activeKey = urlParams.get('article');
-            const feedParam = urlParams.get('feed');
-            
-            const isFeedPath = window.location.pathname.toLowerCase().includes('/feed') || 
-                               window.location.href.toLowerCase().includes('/feed') || 
-                               feedParam === 'rss' || 
-                               feedParam === 'true';
-            
             const dashboardEl = document.getElementById('dashboard-view');
             const readerEl = document.getElementById('reader-view');
-            const rssEl = document.getElementById('rss-view');
             const backBtn = document.getElementById('btn-back-to-grid');
 
-            // Route 1: RSS Syndication View (/feed/ path or ?feed=rss)
-            if (isFeedPath) {
-                dashboardEl.className = 'hidden';
-                readerEl.className = 'hidden';
-                rssEl.classList.remove('hidden');
-                backBtn.classList.remove('hidden');
-
-                const xml = buildRSSXML();
-                document.getElementById('rss-xml-container').textContent = xml;
-                document.getElementById('rss-stat-count').textContent = `${Object.keys(articleRegistry).length} Items Synced`;
-                lucide.createIcons();
-                triggerDataSyncPipeline();
-                return;
-            }
-
-            rssEl.className = 'hidden';
-
-            // Route 2: Single Article Reader View (?article=key)
             if (activeKey && articleRegistry[activeKey]) {
                 dashboardEl.className = 'hidden'; readerEl.classList.remove('hidden'); backBtn.classList.remove('hidden');
                 const targetArticle = articleRegistry[activeKey];
@@ -1629,7 +1686,6 @@
                     document.getElementById('reader-body').innerHTML = `<div class="p-6 bg-rose-50 rounded-xl text-rose-800 text-sm">Failed to load content. Please verify document sharing settings.</div>`;
                 }
             } else {
-                // Route 3: Standard Dashboard Grid
                 dashboardEl.classList.remove('hidden'); readerEl.className = 'hidden'; backBtn.className = 'hidden';
                 triggerDataSyncPipeline();
             }
@@ -1642,6 +1698,7 @@
             const q = urlParams.get('q');
             if (q) { searchQuery = q.toLowerCase().trim(); document.getElementById('search-input').value = q; }
 
+            // Programmatically attach iframe load handler for comment submissions
             const commentIframe = document.getElementById('comment_submit_target');
             if (commentIframe) {
                 commentIframe.addEventListener('load', handleCommentSubmissionCallback);
@@ -1654,7 +1711,7 @@
                 const fresh = parseArticlesFromHTML(indexHTML);
                 articleRegistry = fresh;
             } catch (e) {
-                console.warn("Index dynamic sync failed: " + e.message);
+                console.warn("Index dynamic sync failed. No offline cache available: " + e.message);
             }
 
             if (privacyLevel === null) {
